@@ -38,5 +38,7 @@ endmacro()
 
 run_tests("")
 run_tests("CXX")
-run_tests("C")
+if (NOT ${CMAKE_C_COMPILER_ID} MATCHES "Borland")
+  run_tests("C")
+endif()
 run_tests("C CXX")
